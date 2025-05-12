@@ -1,3 +1,4 @@
+// Function to convert the number to a Roman numeral
 function convertToRoman(num) {
   if (num <= 0 || num > 100000) {
     return "Invalid input";
@@ -5,17 +6,11 @@ function convertToRoman(num) {
 
   const romanMap = [
     ['M', 1000],
-    ['CM', 900],
     ['D', 500],
-    ['CD', 400],
     ['C', 100],
-    ['XC', 90],
     ['L', 50],
-    ['XL', 40],
     ['X', 10],
-    ['IX', 9],
     ['V', 5],
-    ['IV', 4],
     ['I', 1]
   ];
 
@@ -32,6 +27,9 @@ function convertToRoman(num) {
   return result;
 }
 
-// Example usage:
-console.log(convertToRoman(14));    
-console.log(convertToRoman(798));   
+// Function to handle the button click and display the result
+function convertNumber() {
+  const num = parseInt(document.getElementById('numInput').value);
+  const romanNumeral = convertToRoman(num);
+  document.getElementById('result').textContent = romanNumeral;
+}
